@@ -8,12 +8,12 @@ function result(num1, num2, num3) {
   document.getElementById('item' + num2).style.background = 'rgba(236, 64, 38, 0.6)';
   document.getElementById('item' + num3).style.background = 'rgba(236, 64, 38, 0.6)';
 
-  setInterval(function () { title.innerHTML += '.' }, 1000)
-  setTimeout(function () { location.reload() }, 3000)
+  setInterval(function () { title.innerHTML += '.' }, 500)
+  setTimeout(function () { location.reload() }, 1500)
 }
 
 function winner() {
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 1; i < 10; i++) {
     squares[i] = document.getElementById("item" + i).innerHTML;
   } if (squares[1] == squares[2] && squares[2] == squares[3] && squares[1] != '') {
     result(1, 2, 3)
@@ -27,38 +27,21 @@ function winner() {
     result(2, 5, 8)
   } else if (squares[3] == squares[6] && squares[6] == squares[9] && squares[3] != '') {
     result(3, 6, 9)
-  } else if (squares[1] == squares[5] && squares[5] == squares[9] && squares[9] != '') {
+  } else if (squares[1] == squares[5] && squares[5] == squares[9] && squares[1] != '') {
     result(1, 5, 9)
   } else if (squares[3] == squares[5] && squares[5] == squares[7] && squares[3] != '') {
     result(3, 5, 7)
   }
 
-
-  else if (squares[1] == squares[2] && squares[2] != squares[3] && squares[3] != '' && squares[1] != '' && squares[2] != '' && squares[3] != '' && squares[4] != '' && squares[5] != '' && squares[6] != '' && squares[7] != '' && squares[8] != '' && squares[9] != '') {
-    setInterval(function () { title.innerHTML += '.' }, 500)
-    setTimeout(function () { location.reload() }, 2000)
-  } else if (squares[4] == squares[5] && squares[5] != squares[6] && squares[6] != '' && squares[1] != '' && squares[2] != '' && squares[3] != '' && squares[4] != '' && squares[5] != '' && squares[6] != '' && squares[7] != '' && squares[8] != '' && squares[9] != '') {
-    setInterval(function () { title.innerHTML += '.' }, 500)
-    setTimeout(function () { location.reload() }, 2000)
-  } else if (squares[7] == squares[8] && squares[8] != squares[9] && squares[9] != '' && squares[1] != '' && squares[2] != '' && squares[3] != '' && squares[4] != '' && squares[5] != '' && squares[6] != '' && squares[7] != '' && squares[8] != '' && squares[9] != '') {
-    setInterval(function () { title.innerHTML += '.' }, 500)
-    setTimeout(function () { location.reload() }, 2000)
-  } else if (squares[1] == squares[4] && squares[4] != squares[7] && squares[7] != '' && squares[1] != '' && squares[2] != '' && squares[3] != '' && squares[4] != '' && squares[5] != '' && squares[6] != '' && squares[7] != '' && squares[8] != '' && squares[9] != '') {
-    setInterval(function () { title.innerHTML += '.' }, 500)
-    setTimeout(function () { location.reload() }, 2000)
-  } else if (squares[2] == squares[5] && squares[5] != squares[8] && squares[8] != '' && squares[1] != '' && squares[2] != '' && squares[3] != '' && squares[4] != '' && squares[5] != '' && squares[6] != '' && squares[7] != '' && squares[8] != '' && squares[9] != '') {
-    setInterval(function () { title.innerHTML += '.' }, 500)
-    setTimeout(function () { location.reload() }, 2000)
-  } else if (squares[3] == squares[6] && squares[6] != squares[9] && squares[9] != '' && squares[1] != '' && squares[2] != '' && squares[3] != '' && squares[4] != '' && squares[5] != '' && squares[6] != '' && squares[7] != '' && squares[8] != '' && squares[9] != '') {
-    setInterval(function () { title.innerHTML += '.' }, 500)
-    setTimeout(function () { location.reload() }, 2000)
-  } else if (squares[1] == squares[5] && squares[5] != squares[9] && squares[9] != '' && squares[1] != '' && squares[2] != '' && squares[3] != '' && squares[4] != '' && squares[5] != '' && squares[6] != '' && squares[7] != '' && squares[8] != '' && squares[9] != '') {
-    setInterval(function () { title.innerHTML += '.' }, 500)
-    setTimeout(function () { location.reload() }, 2000)
-  } else if (squares[3] == squares[5] && squares[5] != squares[7] && squares[7] != '' && squares[1] != '' && squares[2] != '' && squares[3] != '' && squares[4] != '' && squares[5] != '' && squares[6] != '' && squares[7] != '' && squares[8] != '' && squares[9] != '') {
-    setInterval(function () { title.innerHTML += '.' }, 500)
-    setTimeout(function () { location.reload() }, 2000)
+  else {
+    if (squares[1] != '' && squares[2] != '' && squares[3] != '' && squares[4] != '' && squares[5] != '' && squares[6] != '' && squares[7] != '' && squares[8] != '' && squares[9] != '') {
+      title.innerHTML = 'No winner'
+      setInterval(function () { title.innerHTML += '.' }, 500)
+      setTimeout(function () { location.reload() }, 1500)
+    }
   }
+
+
 }
 
 
