@@ -7,6 +7,14 @@
   --mainPadding: 10vw;
 }
 
+.scroll {
+  position: fixed;
+  z-index: 99999999999;
+  width: 0px;
+  height: 5px;
+  background-color: var(--mainColor);
+}
+
 * {
   font-family: "poppins", sans-serif;
   margin: 0;
@@ -62,7 +70,7 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url(images/1044381.jpg);
+  background: url(images/background.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -184,7 +192,6 @@ section {
   border-radius: 10px;
   margin: 20px;
   transition: var(--hoverTransition);
-
 }
 
 .pro-card:hover {
